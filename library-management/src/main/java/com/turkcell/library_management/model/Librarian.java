@@ -43,5 +43,71 @@ public class Librarian {
     @OneToMany(mappedBy = "returnedToLibrarian")
     private Set<Borrowing> borrowingsReceived;
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getIdentityNumber() {
+        return identityNumber;
+    }
+
+    public void setIdentityNumber(String identityNumber) {
+        this.identityNumber = identityNumber;
+    }
+
+    public String getLibrarianName() {
+        return librarianName;
+    }
+
+    public void setLibrarianName(String librarianName) {
+        this.librarianName = librarianName;
+    }
+
+    public String getLibrarianSurname() {
+        return librarianSurname;
+    }
+
+    public void setLibrarianSurname(String librarianSurname) {
+        this.librarianSurname = librarianSurname;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public Shift getShift() {
+        return shift;
+    }
+
+    public void setShift(Shift shift) {
+        this.shift = shift;
+    }
+
+    public Set<Borrowing> getBorrowingsGiven() {
+        return borrowingsGiven;
+    }
+
+    public void setBorrowingsGiven(Set<Borrowing> borrowingsGiven) {
+        this.borrowingsGiven = borrowingsGiven;
+    }
+
+    public Set<Borrowing> getBorrowingsReceived() {
+        return borrowingsReceived;
+    }
+
+    public void setBorrowingsReceived(Set<Borrowing> borrowingsReceived) {
+        this.borrowingsReceived = borrowingsReceived;
+    }
+
+
+    
 
 }

@@ -55,4 +55,106 @@ public class Borrowing {
 
     @OneToOne(mappedBy = "borrowing")
     private Penalty penalty;
+
+
+    public UUID getId() {
+        return id;
+    }
+
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+
+    public BookCopy getBookCopy() {
+        return bookCopy;
+    }
+
+
+    public void setBookCopy(BookCopy bookCopy) {
+        this.bookCopy = bookCopy;
+    }
+
+
+    public Student getStudent() {
+        return student;
+    }
+
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+
+    public Librarian getBorrowedByLibrarian() {
+        return borrowedByLibrarian;
+    }
+
+
+    public void setBorrowedByLibrarian(Librarian borrowedByLibrarian) {
+        this.borrowedByLibrarian = borrowedByLibrarian;
+    }
+
+
+    public Librarian getReturnedToLibrarian() {
+        return returnedToLibrarian;
+    }
+
+
+    public void setReturnedToLibrarian(Librarian returnedToLibrarian) {
+        this.returnedToLibrarian = returnedToLibrarian;
+    }
+
+
+    public Instant getBorrowedAt() {
+        return borrowedAt;
+    }
+
+
+    public void setBorrowedAt(Instant borrowedAt) {
+        this.borrowedAt = borrowedAt;
+    }
+
+
+    public Instant getDueAt() {
+        return dueAt;
+    }
+
+
+    public void setDueAt(Instant dueAt) {
+        this.dueAt = dueAt;
+    }
+
+
+    public Instant getReturnedAt() {
+        return returnedAt;
+    }
+
+
+    public void setReturnedAt(Instant returnedAt) {
+        this.returnedAt = returnedAt;
+    }
+
+
+    public BorrowStatus getBorrowStatus() {
+        return borrowStatus;
+    }
+
+
+    public void setBorrowStatus(BorrowStatus borrowStatus) {
+        this.borrowStatus = borrowStatus;
+    }
+
+
+    public Penalty getPenalty() {
+        return penalty;
+    }
+
+
+    public void setPenalty(Penalty penalty) {
+        this.penalty = penalty;
+    }
+
+    
 }

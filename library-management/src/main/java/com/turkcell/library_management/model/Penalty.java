@@ -43,4 +43,63 @@ public class Penalty {
     @Column(name = "description")
     private String description;
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public Borrowing getBorrowing() {
+        return borrowing;
+    }
+
+    public void setBorrowing(Borrowing borrowing) {
+        this.borrowing = borrowing;
+    }
+
+    public BigDecimal getAmountTry() {
+        return amountTry;
+    }
+
+    public void setAmountTry(BigDecimal amountTry) {
+        this.amountTry = amountTry;
+    }
+
+    public Instant getPenaltyDate() {
+        return penaltyDate;
+    }
+
+    public void setPenaltyDate(Instant penaltyDate) {
+        this.penaltyDate = penaltyDate;
+    }
+
+    public Instant getPaidAt() {
+        return paidAt;
+    }
+
+    public void setPaidAt(Instant paidAt) {
+        this.paidAt = paidAt;
+    }
+
+    public PaymentStatus getPaymentStatus() {
+        return paymentStatus;
+    }
+
+    public void setPaymentStatus(PaymentStatus paymentStatus) {
+        this.paymentStatus = paymentStatus;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+
+    
+
 }

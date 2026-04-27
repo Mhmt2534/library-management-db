@@ -37,5 +37,47 @@ public class BookCopy {
     @OneToMany(mappedBy = "bookCopy")
     private Set<Borrowing> borrowings;
 
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public BookStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(BookStatus status) {
+        this.status = status;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
+    }
+
+    public Set<Borrowing> getBorrowings() {
+        return borrowings;
+    }
+
+    public void setBorrowings(Set<Borrowing> borrowings) {
+        this.borrowings = borrowings;
+    }
+
+
+    
     
 }
