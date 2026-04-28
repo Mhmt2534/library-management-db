@@ -1,5 +1,7 @@
 package com.turkcell.library_management.controller;
 
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,8 +17,8 @@ public class CategoryController {
         this.categoryServiceImpl = categoryServiceImpl;
     }
     
-
-    public void create(CreateCategoryRequestDto requestDto){
+    @PostMapping("/create")
+    public void create(@RequestBody CreateCategoryRequestDto requestDto){
         categoryServiceImpl.create(requestDto);
     }
 

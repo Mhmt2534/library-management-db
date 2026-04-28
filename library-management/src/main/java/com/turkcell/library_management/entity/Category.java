@@ -19,7 +19,7 @@ public class Category {
     @Column(name = "id")
     private UUID id;
 
-    @Column(name = "category_name")
+    @Column(name = "category_name", unique = true)
     private String categoryName;
 
     @ManyToMany(mappedBy = "categories")
