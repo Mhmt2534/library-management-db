@@ -1,10 +1,12 @@
-package com.turkcell.library_management.model;
+package com.turkcell.library_management.entity;
 
 import java.time.Instant;
 import java.util.Set;
 import java.util.UUID;
 
 import org.hibernate.annotations.UuidGenerator;
+
+import com.turkcell.library_management.enums.StudentStatus;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

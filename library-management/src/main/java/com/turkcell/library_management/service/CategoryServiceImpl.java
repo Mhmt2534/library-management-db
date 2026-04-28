@@ -2,6 +2,8 @@ package com.turkcell.library_management.service;
 
 import org.springframework.stereotype.Service;
 
+import com.turkcell.library_management.dto.request.CreateCategoryRequestDto;
+import com.turkcell.library_management.model.Category;
 import com.turkcell.library_management.repository.CategoryRepository;
 
 @Service
@@ -12,6 +14,12 @@ public class CategoryServiceImpl {
         this.categoryRepository = categoryRepository;
     }
 
+    public void create(CreateCategoryRequestDto request){
+        Category category = new Category();
+        category.setCategoryName(request.getName());
+
+        this.categoryRepository.save(category);
+    }
     
 
 }

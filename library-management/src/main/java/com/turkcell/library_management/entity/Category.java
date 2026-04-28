@@ -1,4 +1,4 @@
-package com.turkcell.library_management.model;
+package com.turkcell.library_management.entity;
 
 import java.util.Set;
 import java.util.UUID;
