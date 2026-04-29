@@ -5,10 +5,9 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
-import com.turkcell.library_management.dto.request.CreateCategoryRequestDto;
-import com.turkcell.library_management.dto.request.UpdateCategoryRequestDto;
-import com.turkcell.library_management.dto.response.CategoryResponse;
-import com.turkcell.library_management.dto.response.ListCategoryResponse;
+import com.turkcell.library_management.dto.category.request.CreateCategoryRequestDto;
+import com.turkcell.library_management.dto.category.request.UpdateCategoryRequestDto;
+import com.turkcell.library_management.dto.category.response.ListCategoryResponse;
 import com.turkcell.library_management.entity.Category;
 import com.turkcell.library_management.mapper.CategoryMapper;
 import com.turkcell.library_management.repository.CategoryRepository;
@@ -47,7 +46,7 @@ public class CategoryServiceImpl {
         Category category = categoryRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Category not found"));
 
-        category.setCategoryName(requestDto.getCategoryName());
+        CategoryMapper.updateEntity(category, requestDto);
 
         categoryRepository.save(category);
     }

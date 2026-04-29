@@ -6,11 +6,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.turkcell.library_management.dto.request.CreateCategoryRequestDto;
-import com.turkcell.library_management.dto.request.UpdateCategoryRequestDto;
-import com.turkcell.library_management.dto.response.CategoryResponse;
-import com.turkcell.library_management.dto.response.ListCategoryResponse;
-import com.turkcell.library_management.entity.Category;
+import com.turkcell.library_management.dto.category.request.CreateCategoryRequestDto;
+import com.turkcell.library_management.dto.category.request.UpdateCategoryRequestDto;
+import com.turkcell.library_management.dto.category.response.ListCategoryResponse;
 import com.turkcell.library_management.service.CategoryServiceImpl;
 
 import java.util.List;
@@ -19,7 +17,6 @@ import java.util.UUID;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController

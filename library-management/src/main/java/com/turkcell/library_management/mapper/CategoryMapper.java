@@ -1,7 +1,8 @@
 package com.turkcell.library_management.mapper;
 
-import com.turkcell.library_management.dto.request.CreateCategoryRequestDto;
-import com.turkcell.library_management.dto.response.ListCategoryResponse;
+import com.turkcell.library_management.dto.category.request.CreateCategoryRequestDto;
+import com.turkcell.library_management.dto.category.request.UpdateCategoryRequestDto;
+import com.turkcell.library_management.dto.category.response.ListCategoryResponse;
 import com.turkcell.library_management.entity.Category;
 
 public class CategoryMapper {
@@ -15,6 +16,10 @@ public class CategoryMapper {
         Category category = new Category();
         category.setCategoryName(requestDto.getCategoryName());
         return category;
+    }
+
+    public static void updateEntity(Category category, UpdateCategoryRequestDto request) {
+        category.setCategoryName(request.getCategoryName());
     }
 
 }

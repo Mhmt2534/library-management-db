@@ -1,4 +1,4 @@
-package com.turkcell.library_management.dto.response;
+package com.turkcell.library_management.dto.category.response;
 
 public class CategoryResponse {
     private String categoryName;
