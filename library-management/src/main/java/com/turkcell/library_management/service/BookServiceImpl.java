@@ -12,6 +12,7 @@ import com.turkcell.library_management.dto.book.request.UpdateBookRequestDto;
 import com.turkcell.library_management.dto.book.response.ListBookResponse;
 import com.turkcell.library_management.entity.Book;
 import com.turkcell.library_management.entity.Category;
+import com.turkcell.library_management.exception.BookAlreadyExist;
 import com.turkcell.library_management.mapper.BookMapper;
 import com.turkcell.library_management.repository.BookRepository;
 import com.turkcell.library_management.repository.CategoryRepository;
@@ -42,6 +43,11 @@ public class BookServiceImpl {
     }
 
     public void create(CreateBookRequestDto request) {
+
+        if (bookRepository.existsByBookName(request.getBookName()) && bookRepository.existsByAuthorName(request.getAuthorName())) {
+                throw new BookAlreadyExist();
+        }
+
         Book book = BookMapper.toEntity(request);
 
         Set<Category> categories = request.getCategoryIds()

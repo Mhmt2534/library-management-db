@@ -8,5 +8,6 @@ import com.turkcell.library_management.entity.Book;
 
 
 public interface BookRepository extends JpaRepository<Book,UUID>{
-
+    public boolean existsByBookName(String bookName);
+    public boolean existsByAuthorName(String authorName);
 }
