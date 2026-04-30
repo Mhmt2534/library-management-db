@@ -1,49 +1,20 @@
-package com.turkcell.library_management.entity;
+package com.turkcell.library_management.dto.librarian.response;
 
-import java.util.Set;
+import java.util.List;
 import java.util.UUID;
 
-import org.hibernate.annotations.UuidGenerator;
-
+import com.turkcell.library_management.dto.borrowing.response.BorrowingSimpleDto;
 import com.turkcell.library_management.enums.Shift;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "librarians")
-public class Librarian {
-    @Id
-    @UuidGenerator
-    @Column(name = "id")
+public class ListLibrarianResponse {
     private UUID id;
-
-    @Column(name = "identity_number", unique = true)
     private String identityNumber;
-
-    @Column(name = "librarian_name")
     private String librarianName;
-
-    @Column(name = "librarian_surname")
     private String librarianSurname;
-
-    @Column(name = "phone_number", unique = true)
-    private String phoneNumber ;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "shift")
+    private String phoneNumber;
     private Shift shift;
-
-    @OneToMany(mappedBy = "borrowedByLibrarian")
-    private Set<Borrowing> borrowingsGiven;
-
-    @OneToMany(mappedBy = "returnedToLibrarian")
-    private Set<Borrowing> borrowingsReceived;
+    private List<BorrowingSimpleDto> borrowingsGiven;
+    private List<BorrowingSimpleDto> borrowingsReceived;
 
     public UUID getId() {
         return id;
@@ -93,23 +64,19 @@ public class Librarian {
         this.shift = shift;
     }
 
-    public Set<Borrowing> getBorrowingsGiven() {
+    public List<BorrowingSimpleDto> getBorrowingsGiven() {
         return borrowingsGiven;
     }
 
-    public void setBorrowingsGiven(Set<Borrowing> borrowingsGiven) {
+    public void setBorrowingsGiven(List<BorrowingSimpleDto> borrowingsGiven) {
         this.borrowingsGiven = borrowingsGiven;
     }
 
-    public Set<Borrowing> getBorrowingsReceived() {
+    public List<BorrowingSimpleDto> getBorrowingsReceived() {
         return borrowingsReceived;
     }
 
-    public void setBorrowingsReceived(Set<Borrowing> borrowingsReceived) {
+    public void setBorrowingsReceived(List<BorrowingSimpleDto> borrowingsReceived) {
         this.borrowingsReceived = borrowingsReceived;
     }
-
-
-    
-
 }

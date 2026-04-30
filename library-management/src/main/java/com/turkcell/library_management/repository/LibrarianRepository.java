@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.turkcell.library_management.entity.Librarian;
 
-public interface LibrarianRepository extends JpaRepository<Librarian,UUID>{
-
+public interface LibrarianRepository extends JpaRepository<Librarian,UUID> {
+    boolean existsByIdentityNumber(String identityNumber);
+    boolean existsByPhoneNumber(String phoneNumber);
 }

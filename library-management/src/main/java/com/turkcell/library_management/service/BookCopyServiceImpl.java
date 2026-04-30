@@ -2,22 +2,15 @@ package com.turkcell.library_management.service;
 
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
-
-import javax.management.RuntimeErrorException;
 
 import org.springframework.stereotype.Service;
 
-import com.turkcell.library_management.dto.book.request.UpdateBookRequestDto;
-import com.turkcell.library_management.dto.book.response.ListBookResponse;
 import com.turkcell.library_management.dto.bookCopies.request.CreateBookCopyRequestDto;
 import com.turkcell.library_management.dto.bookCopies.request.UpdateBookCopyRequestDto;
 import com.turkcell.library_management.dto.bookCopies.response.ListBookCopyResponse;
-import com.turkcell.library_management.dto.category.request.CreateCategoryRequestDto;
-import com.turkcell.library_management.entity.Book;
 import com.turkcell.library_management.entity.BookCopy;
+import com.turkcell.library_management.enums.BookStatus;
 import com.turkcell.library_management.mapper.BookCopyMapper;
-import com.turkcell.library_management.mapper.BookMapper;
 import com.turkcell.library_management.repository.BookCopyRepository;
 import com.turkcell.library_management.repository.BookRepository;
 
@@ -78,5 +71,13 @@ public class BookCopyServiceImpl {
 
         bookCopyRepository.delete(bookCopy);
     }
+
+
+    public void setBookStatus(BookCopy bookCopy, BookStatus status){
+        bookCopy.setStatus(status);
+        bookCopyRepository.save(bookCopy);
+    }
+
+
 
 }
